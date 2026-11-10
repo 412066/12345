@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>王圓媗的學習歷程網站</title>
+    <style>
+        @import url('https://googleapis.com');
+        
+        /* 基礎風格設定與背景特效 */
+        body {
+            background-color: #2c2013;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.15) 1px, transparent 1px),
+                              linear-gradient(90deg, rgba(0, 0, 0, 0.15) 1px, transparent 1px);
+            background-size: 20px 20px; /* 模擬麥塊像素格線背景 */
+            color: #ffffff;
+            font-family: 'Noto Sans TC', sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        /* 頂部草地 Banner 區 */
+        header {
+            background: linear-gradient(to bottom, #4caf50 80%, #388e3c 100%);
+            border-bottom: 8px solid #5d4037;
+            padding: 40px 20px;
+            text-align: center;
+            box-shadow: 0 6px 0 #1b5e20;
+        }
+
+        .pixel-title {
+            font-family: 'Press Start 2P', cursive;
+            font-size: 2.2rem;
+            color: #ffff55;
+            text-shadow: 4px 4px 0px #3f3f3f;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #ffffff;
+            text-shadow: 2px 2px 0px #000000;
+        }
+
+        /* 麥塊風格主要連結按鈕 */
+        .btn-container {
+            text-align: center;
+            margin: 25px 0;
+        }
+
+        .btn-minecraft {
+            display: inline-block;
+            background-color: #9e9e9e;
+            color: #ffffff;
+            border: 4px solid #000000;
+            box-shadow: inset -4px -4px 0px #616161, inset 4px 4px 0px #e0e0e0;
+            padding: 12px 25px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: transform 0.1s ease;
+        }
+
+        .btn-minecraft:hover {
+            background-color: #4caf50;
+            box-shadow: inset -4px -4px 0px #1b5e20, inset 4px 4px 0px #81c784;
+            color: #ffff55;
+            transform: scale(1.05); /* 微放大動畫 */
+        }
+
+        /* Pinterest 瀑布流/相簿排版 */
+        .pinterest-grid {
+            columns: 3 280px; /* 自動填滿，最窄280px，支援多欄排版 */
+            column-gap: 20px;
+            width: 92%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
+
+        /* 瀑布流卡片與 Hover 特效 */
+        .pin-card {
+            background-color: #4a3b2c;
+            border: 5px solid #2e2216;
+            box-shadow: inset -4px -4px 0px #3a2e22, inset 4px 4px 0px #63503c, 5px 5px 15px rgba(0,0,0,0.5);
+            margin-bottom: 20px;
+            break-inside: avoid; /* 防止卡片被欄位切斷 */
+            padding: 15px;
+            border-radius: 6px;
+            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .pin-card:hover {
+            transform: translateY(-8px) scale(1.02); /* 滑鼠懸停往上飄且放大特效 */
+            box-shadow: inset -4px -4px 0px #3a2e22, inset 4px 4px 0px #63503c, 10px 15px 25px rgba(0,0,0,0.7);
+            border-color: #ffff55; /* 懸停時邊框發光變黃色 */
+        }
+
+        /* 卡片內的圖片設定 */
+        .pin-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 4px;
+            border: 3px solid #1a1108;
+            background-color: #22170e;
+        }
+
+        .pin-card h3 {
+            margin: 12px 0 6px 0;
+            color: #55ffff; /* 麥塊鑽石藍 */
+            font-size: 1.2rem;
+        }
+
+        .pin-card p {
+            margin: 0;
+            font-size: 0.95rem;
+            color: #dfdfdf;
+            line-height: 1.5;
+        }
+
+        /* 頁尾 */
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: #8b7765;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 頂部草地 Banner 區 -->
+    <header>
+        <div class="pixel-title">WANG, YUAN-XUAN</div>
+        <div class="subtitle">王圓媗的麥塊與方塊boy主題學習歷程</div>
+    </header>
+
+    <!-- 頂部主要點擊跳轉區 -->
+    <div class="btn-container">
+        <a href="https://youtube.com" target="_blank" class="btn-minecraft">
+            ⛏️ 進入【方塊boy】YouTube 官方頻道
+        </a>
+    </div>
+
+    <!-- Pinterest 瀑布流排版區 -->
+    <div class="pinterest-grid">
+        
+        <!-- 關於我卡片 -->
+        <div class="pin-card" onclick="window.open('https://youtube.com', '_blank')">
+            <h3>👤 關於主辦人：王圓媗</h3>
+            <p>歡迎來到我的空間！我擅長利用幾何與立體思維學習新事物，麥塊是我激發空間邏輯與靈感的最佳基地。</p>
+        </div>
+
+        <!-- 團隊全體卡片 -->
+        <div class="pin-card" onclick="window.open('https://youtube.com', '_blank')">
+            <img src="https://weserv.nl" alt="方塊boy全體成員">
+            <h3>🎮 靈感巨頭：方塊boy</h3>
+            <p>由阿斯、紅月、偏頭、Miso 組成的超人氣 Minecraft 實況天團！點擊卡片可以到官方頻道和他們一起冒險！</p>
+        </div>
+
+        <!-- 成員 1 -->
+        <div class="pin-card" onclick="window.open('https://youtube.com', '_blank')">
+            <img src="https://weserv.nl" alt="阿斯">
+            <h3>👑 團隊核心：阿斯 (Asu)</h3>
+            <p>方塊boy 的團長與主導核心，負責構思各種疯狂、高難度的麥塊自虐生存企劃！</p>
+        </div>
+
+        <!-- 成員 2 -->
+        <div class="pin-card" onclick="window.open('https://youtube.com', '_blank')">
+            <img src="https://weserv.nl" alt="紅月">
+            <h3>🌙 幽默擔當：紅月 (Yue)</h3>
+            <p>片中充滿各種趣味十足的亮點，互動風格風趣，常在各種極限危機中引爆笑點！</p>
+        </div>
+
+        <!-- 學習成果卡片 -->
+        <div class="pin-card" onclick="window.open('https://youtube.com', '_blank')">
+            <h3>📦 我的多元成果與報告</h3>
+            <p>📍 <b>資訊科技：</b> 瀑布流響應式網頁切版與動畫特效實作。</p>
+            <p>📍 <b>空間邏輯：</b> 利用 Minecraft 三維方塊結構進行立體透視研究。</p>
+            <p>📍 <b>團隊協作：</b> 拆解方塊boy多人協作模式中的角色職責與分工。</p>
+        </div>
+
+        <!-- 成員 3 -->
+        <div class="pin-card" onclick="window.open('https://youtube.com', '_blank')">
+            <img src="https://weserv.nl" alt="偏頭">
+            <h3>⚡ 技術高手：偏頭 (Fauzh)</h3>
+            <p>實力派的麥塊高手，擅長快速通關（Speedrun），在連續開台挑戰中展現驚人毅力！</p>
+        </div>
+
+        <!-- 成員 4 -->
+        <div class="pin-card" onclick="window.open('https://youtube.com', '_blank')">
+            <img src="https://weserv.nl" alt="Miso">
+            <h3>🍄 靈魂成員：味噌 (Miso)</h3>
+            <p>團隊中不可或缺的節奏調和者，日常吐槽與互動充滿綜藝效果，深受觀眾喜愛。</p>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>© 2026 王圓媗 學習歷程檔案庫 | Pinterest 與麥塊像素風概念網頁</p>
+    </footer>
+
+</body>
+</html>
